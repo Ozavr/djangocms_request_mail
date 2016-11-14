@@ -6,7 +6,7 @@ class RequestList( models.Model ):
 	Модель базы данных для базы данных в которую записываются данные клиента при запросе
 	'''
 	name = models.CharField( max_length = 20, verbose_name = 'Имя' )
-	phone = models.CharField( max_length = 20, verbose_name = 'Номер телефона', default = True )
+	phone = models.CharField( max_length = 20, verbose_name = 'Номер телефона' )
 	description = models.TextField( max_length = 350, verbose_name = 'Содержание запроса' )
 	date = models.DateTimeField( auto_now_add = True, db_index =True )
 

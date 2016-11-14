@@ -1,6 +1,6 @@
 from django.views.generic.edit import CreateView
 from django.core.urlresolvers import reverse_lazy
-from django.core.mail import send_mail
+from django.core.mail import mail_managers
 from django.contrib.messages.views import SuccessMessageMixin
 from tagilturist import settings
 
@@ -15,7 +15,7 @@ class CreateRequest( SuccessMessageMixin, CreateView ):
 	'''
 	model = RequestList
 	template_name = 'request.html'
-	fields = [ 'name', 'phone_number', 'description' ]
+	fields = [ 'name', 'phone', 'description' ]
 	success_message = 'Спасибо за вашу заявку, наши менеджеры свяжутся с вами в ближайшое время!'
 	success_url = 'news'
 
@@ -24,10 +24,8 @@ class CreateRequest( SuccessMessageMixin, CreateView ):
 		sending email request
 		'''
 		output = super( CreateRequest, self ).form_valid( form )
-		request_message = 'Запрос клиента с сайта tagilturist.ru!\n\n' +
-			'Имя: ' + form.instance.name + '\n' +
-			'Телефон: ' + form.instance.phone + '\n' +
-			'Краткая информация запроса: ' +  form.instance.description
 
-		send_mail( 'Запрос клиента', request_message, fail_silently = True )
+		request_message = 'Запрос клиента с сайта tagilturist.ru!\n\n' + 'Имя: ' + form.instance.name + '\n' + 'Телефон: ' + form.instance.phone + '\n' + 'Краткая информация запроса: ' +  form.instance.description
+
+		mail_managers( 'Запрос клиента', request_message )
 		return output
