@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load cms_tags menu_tags sekizai_tags staticfiles %}
+{% block additional_css %}<link rel="stylesheet" type="text/css" href="{% static 'request.css' %}">{% endblock %}
+{% block content %}
+	<div class="request-container">
+		<div>
+			{% static_placeholder 'request_avatar' %}
+		</div>
+		<div class="request-h1">
+			{% static_placeholder 'request_success_h1' %}
+		</div>
+		<div class="request-success-button">
+			<a href="/">Вернутся на главную страницу</a>
+		</div>
+	</div>
+{% endblock %}

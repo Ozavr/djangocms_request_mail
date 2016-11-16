@@ -1,0 +1,61 @@
+.request-container {
+	background: #ffffff;
+	box-shadow: 0px 2px 4px 0px #000000;
+	font-family: Arial;
+	font-size: 14px;
+	color: #000000;
+	margin-bottom: 16px;
+}
+.request-h1 {
+	padding: 16px;
+	min-height: 50px;
+}
+.request-h1 h1 {
+	font-size: 24px !important;
+	font-weight: bold;
+	margin: 0px;
+}
+.request-form {
+	padding: 16px;
+}
+.request-form label {
+	text-align: center !important;
+}
+.request-form input,
+.request-form textarea {
+	border-radius: 0px;
+	box-shadow: inset 0px 1px 2px 0px #0d47a1;
+}
+.request-form-submit {
+	background: #2196f3;
+	border: 0px;
+	border-radius: 0px;
+	box-shadow: 0px 1px 2px 0px #000000 !important;
+	color: #ffffff;
+	font-size: 16px;
+	height: 46px;
+	width: 100%;
+}
+.request-form-submit:hover {
+	background: #f44336;
+}
+.error-description {
+	color: #f44336;
+}
+.request-success-button {
+	padding: 0px 16px 16px 16px;
+}
+.request-success-button a {
+	display: block;
+	background: #2196f3;
+	box-shadow: 0px 1px 2px 0px #000000;
+	height: 46px;
+	text-align: center;
+	font-size: 16px;
+	color: #ffffff;
+	padding: 13px;
+}
+.request-success-button a:hover {
+	text-decoration: none;
+	background: #f44336;
+}

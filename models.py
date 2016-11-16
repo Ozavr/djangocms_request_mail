@@ -1,4 +1,5 @@
 from django.db import models
+# from cms.models import CMSPlugin
 
 class RequestList( models.Model ):
 	'''
@@ -7,8 +8,8 @@ class RequestList( models.Model ):
 	'''
 	name = models.CharField( max_length = 20, verbose_name = 'Имя' )
 	phone = models.CharField( max_length = 20, verbose_name = 'Номер телефона' )
-	description = models.TextField( max_length = 350, verbose_name = 'Содержание запроса' )
-	date = models.DateTimeField( auto_now_add = True, db_index =True )
+	description = models.TextField( max_length = 350, verbose_name = 'Краткое содержание вашей заявки', blank = True )
+	date = models.DateTimeField( auto_now_add = True, db_index = True )
 
 	class Meta:
 		'''
@@ -16,3 +17,4 @@ class RequestList( models.Model ):
 		'''
 		ordering = [ '-date' ]
 		verbose_name = 'Список запросов'
+		verbose_name_plural = 'Список запросов'
