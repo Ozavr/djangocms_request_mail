@@ -25,7 +25,10 @@ class CreateRequest( CreateView ):
 		'''
 		output = super( CreateRequest, self ).form_valid( form )
 
-		request_message = 'Запрос клиента с сайта tagilturist.ru!\n\n' + 'Имя: ' + form.instance.name + '\n' + 'Телефон: ' + form.instance.phone + '\n' + 'Краткая информация запроса: ' +  form.instance.description
+		request_message = 'Запрос клиента с сайта tagilturist.ru!\n\n' 
+		request_message += 'Имя: ' + form.instance.name + '\n'
+		request_message += 'Телефон: ' + form.instance.phone + '\n' 
+		request_message += 'Краткая информация запроса: ' +  form.instance.description
 
 		mail_managers( 'Запрос клиента', request_message )
 		return output
